@@ -11,8 +11,8 @@ package williams_java2_project_3;
  */
 public class StoreItemNode {
     final private StoreItem thisItem;
-    private StoreItemNode nextNode;
-    private StoreItemNode previousNode;
+    public StoreItemNode nextNode;     //public while deving it, change to priv
+    public StoreItemNode previousNode; //and use functions later
     StoreItemNode(StoreItem item){
         thisItem=item;
         nextNode=null;
@@ -32,5 +32,9 @@ public class StoreItemNode {
     }
     public StoreItem getItem(){
         return thisItem;
+    }
+    
+    public void sellItem(){
+        thisItem.remove();
     }
 }

@@ -32,7 +32,25 @@ public class StoreHandler {
     }
 
     public void sellItem(){
-        
+        if(currentNode!=null){
+            currentNode.sellItem();
+            if(currentNode.getPrevious()!=null&&currentNode.getNext()!=null){
+                currentNode.previousNode.nextNode=currentNode.nextNode;
+                currentNode.nextNode.previousNode=currentNode.previousNode;
+                currentNode=currentNode.nextNode;
+            }
+            else if(currentNode.getPrevious()==null&&currentNode.getNext()!=null){
+                root=currentNode.getNext();
+                currentNode=root;
+            }
+            else if(currentNode.getPrevious()!=null&&currentNode.getNext()==null){
+                currentNode.previousNode.nextNode=null;
+            }
+            else{
+                currentNode=null;
+                root=null;
+            }
+        }
     }
 
     public void nextItem(){
@@ -46,7 +64,9 @@ public class StoreHandler {
     }
     
     public void previousItem(){
-        
+        if(currentNode.previousNode!=null){
+            currentNode=currentNode.previousNode;
+        }
     }
 
     public StoreItem displayCurrent(){
