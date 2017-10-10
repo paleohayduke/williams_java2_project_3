@@ -11,7 +11,7 @@ package williams_java2_project_3;
  */
 public class Book extends StoreItem{
     static int bookCount = 0;
-    String title;
+
     String genre;
 
     public Book(String title, String author, Date dateAcquired, double purchasePrice,
@@ -26,30 +26,24 @@ public class Book extends StoreItem{
         
     }
     
-    public String getTitle(){
-        return title;
-    }
-    
-    public void setTitle(String title){
-        this.title=title;
-    }
-    
+
     public String getGenre(){
         return genre;
     }
     
-    public void setGenre(String gengre){
+    public void setGenre(String genre){
         this.genre=genre;
     }
     
     public void remove(){
         bookCount--;
+        itemCount--;
     }
-    
+
     public String printableString(){
         String output = "Title: " + title +"\nAuthor: "+author+
-                "\nDate Acquired: " + dateAcquired.printableString() + "\nPurchase Price: " + 
-                purchasePrice + "\nAsking Price: "+askingPrice+"Genre: "+genre;
+                "\nDate Acquired(D/M/Y): " + dateAcquired.printableString() + "\nPurchase Price: " + 
+                purchasePrice + "\nAsking Price: "+askingPrice+"\nGenre: "+genre;
         return output;
     }
 //    title, author, dateAcquired, purchasePrice,askingPrice,genre    

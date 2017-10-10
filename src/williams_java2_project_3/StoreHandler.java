@@ -19,22 +19,34 @@ public class StoreHandler {
     }
     public void addItem(StoreItem item){
         StoreItemNode tempItem = new StoreItemNode(item);
+        
         if(root==null){
             root=tempItem;
         }
         else{
             StoreItemNode tempCurrentNode = root;
+            StoreItemNode tempPrevNode = null;
             while(tempCurrentNode.getNext()!=null){
+                tempPrevNode = tempCurrentNode;
                 tempCurrentNode=tempCurrentNode.getNext();
             }
             tempCurrentNode.setNext(tempItem);
+            tempCurrentNode.setPrevious(tempPrevNode);
+            if(tempPrevNode==null){
+                System.out.println("NULL");
+            }
+            else
+                System.out.println("NOT NULL");
         }
+        
+        
     }
 
     public void sellItem(){
         if(currentNode!=null){
             currentNode.sellItem();
-            if(currentNode.getPrevious()!=null&&currentNode.getNext()!=null){
+            if(currentNode.previousNode!=null&&currentNode.nextNode!=null){
+                
                 currentNode.previousNode.nextNode=currentNode.nextNode;
                 currentNode.nextNode.previousNode=currentNode.previousNode;
                 currentNode=currentNode.nextNode;
@@ -45,12 +57,14 @@ public class StoreHandler {
             }
             else if(currentNode.getPrevious()!=null&&currentNode.getNext()==null){
                 currentNode.previousNode.nextNode=null;
+                currentNode=currentNode.previousNode;
             }
-            else{
-                currentNode=null;
+            else if(currentNode.getPrevious()==null&&currentNode.getNext()==null){
+                //currentNode=null;
                 root=null;
             }
         }
+        else return;
     }
 
     public void nextItem(){
@@ -64,12 +78,19 @@ public class StoreHandler {
     }
     
     public void previousItem(){
-        if(currentNode.previousNode!=null){
+//        if(currentNode.previousNode!=null){
+//            currentNode=currentNode.previousNode;
+//        }
+//        
+        if(currentNode==null&&root!=null){
+            currentNode=root;
+        }
+        else if(currentNode.previousNode!=null){
             currentNode=currentNode.previousNode;
         }
     }
 
-    public StoreItem displayCurrent(){
+    public StoreItem getCurrent(){
         return currentNode.getItem();
     }
 }

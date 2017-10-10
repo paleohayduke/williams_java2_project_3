@@ -14,6 +14,9 @@ public class TempGUI extends javax.swing.JFrame {
     /**
      * Creates new form TempGUI
      */
+    
+    StoreHandler store = new StoreHandler();
+    
     public TempGUI() {
         initComponents();
     }
@@ -27,11 +30,11 @@ public class TempGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
+        titleField1 = new javax.swing.JTextField();
         authorField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        dateField1 = new javax.swing.JTextField();
+        dateField11 = new javax.swing.JTextField();
         purchasePriceField1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -47,11 +50,10 @@ public class TempGUI extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         addMovieButton = new javax.swing.JButton();
-        jTextField9 = new javax.swing.JTextField();
+        titleField2 = new javax.swing.JTextField();
         authorField2 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        dateField2 = new javax.swing.JTextField();
         purchasePriceField2 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -61,11 +63,10 @@ public class TempGUI extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         actorButton = new javax.swing.JButton();
         actressButton = new javax.swing.JButton();
-        jTextField15 = new javax.swing.JTextField();
+        titleField3 = new javax.swing.JTextField();
         authorField3 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        dateField3 = new javax.swing.JTextField();
         purchasePriceField3 = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -79,31 +80,52 @@ public class TempGUI extends javax.swing.JFrame {
         mediaField3 = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         addPaintingButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        outputArea = new javax.swing.JTextArea();
+        previousButton = new javax.swing.JButton();
+        nextButton = new javax.swing.JButton();
+        sellButton = new javax.swing.JButton();
+        dateField12 = new javax.swing.JTextField();
+        dateField13 = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        dateField22 = new javax.swing.JTextField();
+        dateField21 = new javax.swing.JTextField();
+        dateField23 = new javax.swing.JTextField();
+        dateField32 = new javax.swing.JTextField();
+        dateField31 = new javax.swing.JTextField();
+        dateField33 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        titleField1.setText("Book Title1");
+        titleField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                titleField1ActionPerformed(evt);
             }
         });
 
-        authorField1.setText("jTextField2");
+        authorField1.setText("1");
 
         jLabel1.setText("Title");
 
         jLabel2.setText("Author");
 
-        dateField1.setText("jTextField1");
+        dateField11.setText("9");
 
-        purchasePriceField1.setText("jTextField2");
+        purchasePriceField1.setText("4.77");
 
         jLabel3.setText("Date Acquired");
 
         jLabel4.setText("Purchase Price");
 
-        askingPriceField1.setText("jTextField1");
+        askingPriceField1.setText("10.99");
+        askingPriceField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                askingPriceField1ActionPerformed(evt);
+            }
+        });
+
+        genreField1.setText("Text");
 
         jLabel5.setText("Asking Price");
 
@@ -112,10 +134,11 @@ public class TempGUI extends javax.swing.JFrame {
         jLabel7.setText("Book");
 
         addBookButton.setText("Add Book");
-
-        askingPriceField2.setText("jTextField1");
-
-        directorField2.setText("jTextField2");
+        addBookButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBookButtonActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Asking Price");
 
@@ -124,26 +147,25 @@ public class TempGUI extends javax.swing.JFrame {
         jLabel10.setText("Movie");
 
         addMovieButton.setText("Add Movie");
-
-        jTextField9.setText("jTextField1");
-
-        authorField2.setText("jTextField2");
+        addMovieButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addMovieButtonActionPerformed(evt);
+            }
+        });
 
         jLabel11.setText("Title");
 
         jLabel12.setText("Author");
 
-        dateField2.setText("jTextField1");
-
-        purchasePriceField2.setText("jTextField2");
-
         jLabel13.setText("Date Acquired");
 
         jLabel14.setText("Purchase Price");
 
-        actorField2.setText("jTextField1");
-
-        actressField2.setText("jTextField2");
+        actorField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actorField2ActionPerformed(evt);
+            }
+        });
 
         jLabel15.setText("Actor");
 
@@ -157,30 +179,21 @@ public class TempGUI extends javax.swing.JFrame {
         });
 
         actressButton.setText("add");
-
-        jTextField15.setText("jTextField1");
-
-        authorField3.setText("jTextField2");
+        actressButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actressButtonActionPerformed(evt);
+            }
+        });
 
         jLabel17.setText("Title");
 
         jLabel18.setText("Author");
 
-        dateField3.setText("jTextField1");
-
-        purchasePriceField3.setText("jTextField2");
-
         jLabel19.setText("Date Acquired");
 
         jLabel20.setText("Purchase Price");
 
-        widthField3.setText("jTextField1");
-
         jLabel21.setText("Width");
-
-        askingPriceField3.setText("jTextField1");
-
-        heightField3.setText("jTextField2");
 
         jLabel22.setText("Asking Price");
 
@@ -188,11 +201,50 @@ public class TempGUI extends javax.swing.JFrame {
 
         jLabel24.setText("Painting");
 
-        mediaField3.setText("jTextField1");
-
         jLabel25.setText("Media");
 
         addPaintingButton.setText("Add Painting");
+        addPaintingButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addPaintingButtonActionPerformed(evt);
+            }
+        });
+
+        outputArea.setColumns(20);
+        outputArea.setRows(5);
+        jScrollPane1.setViewportView(outputArea);
+
+        previousButton.setText("<<");
+        previousButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                previousButtonActionPerformed(evt);
+            }
+        });
+
+        nextButton.setText(">>");
+        nextButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextButtonActionPerformed(evt);
+            }
+        });
+
+        sellButton.setText("SELL");
+        sellButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sellButtonActionPerformed(evt);
+            }
+        });
+
+        dateField12.setText("1");
+
+        dateField13.setText("1986");
+        dateField13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dateField13ActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setText("D-M-Y");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -210,16 +262,25 @@ public class TempGUI extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel7)
-                                .addComponent(jLabel3)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel3))
+                            .addComponent(jLabel26))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(authorField1)
-                            .addComponent(dateField1)
-                            .addComponent(purchasePriceField1)
-                            .addComponent(askingPriceField1)
-                            .addComponent(genreField1))
-                        .addGap(29, 29, 29)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(authorField1)
+                                    .addComponent(titleField1)
+                                    .addComponent(askingPriceField1)
+                                    .addComponent(genreField1)
+                                    .addComponent(purchasePriceField1)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(dateField11, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(dateField12, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(dateField13, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
                             .addComponent(jLabel14)
@@ -233,66 +294,78 @@ public class TempGUI extends javax.swing.JFrame {
                                     .addComponent(jLabel16)
                                     .addComponent(jLabel15))
                                 .addComponent(jLabel9)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(titleField2, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                                .addComponent(directorField2)
+                                .addComponent(authorField2)
+                                .addComponent(purchasePriceField2)
+                                .addComponent(askingPriceField2))
                             .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(actorField2, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                                    .addComponent(actressField2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(authorField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(dateField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(purchasePriceField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(askingPriceField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(directorField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(actressButton)
+                                    .addComponent(actorButton, javax.swing.GroupLayout.Alignment.TRAILING)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(actressField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(actressButton))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(actorField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(actorButton))))))
+                                .addComponent(dateField21, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(dateField22, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(dateField23, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(59, 59, 59)
                         .addComponent(addBookButton)
                         .addGap(93, 93, 93)
                         .addComponent(addMovieButton)))
+                .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel18)
-                                    .addComponent(jLabel20)
-                                    .addComponent(jLabel22)
-                                    .addComponent(jLabel17)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel24)
-                                        .addComponent(jLabel19))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel21)
-                                        .addComponent(jLabel23)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(authorField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(dateField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(purchasePriceField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(askingPriceField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(heightField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(widthField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(8, 8, 8)
-                            .addComponent(jLabel25)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(mediaField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addComponent(addPaintingButton)))
-                .addGap(142, 142, 142))
+                        .addComponent(addPaintingButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel17)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel24)
+                                .addComponent(jLabel19))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel21)
+                                    .addComponent(jLabel25))
+                                .addComponent(jLabel23)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(heightField3, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                                .addComponent(askingPriceField3)
+                                .addComponent(purchasePriceField3)
+                                .addComponent(authorField3)
+                                .addComponent(titleField3)
+                                .addComponent(widthField3)
+                                .addComponent(mediaField3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(dateField31, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(dateField32, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(dateField33, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(previousButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(sellButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(nextButton))
+                            .addComponent(jScrollPane1))))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,18 +382,23 @@ public class TempGUI extends javax.swing.JFrame {
                                 .addComponent(jLabel2)
                                 .addGap(32, 32, 32)
                                 .addComponent(jLabel3)
-                                .addGap(32, 32, 32)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel26)
+                                .addGap(18, 18, 18)
                                 .addComponent(jLabel4)
                                 .addGap(32, 32, 32)
                                 .addComponent(jLabel5)
                                 .addGap(32, 32, 32)
                                 .addComponent(jLabel6))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(titleField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(26, 26, 26)
                                 .addComponent(authorField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(26, 26, 26)
-                                .addComponent(dateField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(dateField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dateField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dateField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(26, 26, 26)
                                 .addComponent(purchasePriceField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(26, 26, 26)
@@ -337,127 +415,211 @@ public class TempGUI extends javax.swing.JFrame {
                                         .addComponent(jLabel11)
                                         .addGap(32, 32, 32)
                                         .addComponent(jLabel12)
-                                        .addGap(32, 32, 32)
-                                        .addComponent(jLabel13)
-                                        .addGap(32, 32, 32)
+                                        .addGap(29, 29, 29)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel13)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(dateField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(dateField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(dateField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(29, 29, 29)
                                         .addComponent(jLabel14)
                                         .addGap(32, 32, 32)
                                         .addComponent(jLabel8)
                                         .addGap(32, 32, 32)
                                         .addComponent(jLabel9))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(titleField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(26, 26, 26)
                                         .addComponent(authorField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(dateField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(26, 26, 26)
+                                        .addGap(69, 69, 69)
                                         .addComponent(purchasePriceField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(26, 26, 26)
                                         .addComponent(askingPriceField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(26, 26, 26)
-                                        .addComponent(directorField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(23, 23, 23)
-                                .addComponent(jLabel15)
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel16)
-                                    .addComponent(actressField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(actressButton)))
+                                        .addComponent(directorField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(295, 295, 295)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(actorField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(actorButton))))
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(addMovieButton)
-                            .addComponent(addBookButton)
-                            .addComponent(addPaintingButton)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jLabel24)
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel17)
-                                .addGap(32, 32, 32)
-                                .addComponent(jLabel18)
-                                .addGap(32, 32, 32)
-                                .addComponent(jLabel19)
-                                .addGap(32, 32, 32)
-                                .addComponent(jLabel20)
-                                .addGap(32, 32, 32)
-                                .addComponent(jLabel22)
-                                .addGap(32, 32, 32)
-                                .addComponent(jLabel23))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26)
-                                .addComponent(authorField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26)
-                                .addComponent(dateField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26)
-                                .addComponent(purchasePriceField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26)
-                                .addComponent(askingPriceField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26)
-                                .addComponent(heightField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
+                                .addComponent(jLabel24)
+                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel17)
+                                        .addGap(32, 32, 32)
+                                        .addComponent(jLabel18)
+                                        .addGap(29, 29, 29)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel19)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(dateField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(dateField32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(dateField33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(29, 29, 29)
+                                        .addComponent(jLabel20)
+                                        .addGap(32, 32, 32)
+                                        .addComponent(jLabel22)
+                                        .addGap(29, 29, 29)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel23)
+                                            .addComponent(heightField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(titleField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(26, 26, 26)
+                                        .addComponent(authorField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(72, 72, 72)
+                                        .addComponent(purchasePriceField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(26, 26, 26)
+                                        .addComponent(askingPriceField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(36, 36, 36)
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(previousButton)
+                                            .addComponent(nextButton)
+                                            .addComponent(sellButton))))))
+                        .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel21)
-                            .addComponent(widthField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel25)
-                            .addComponent(mediaField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(109, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(jLabel25))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel15)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel16))
+                                    .addComponent(widthField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(32, 32, 32)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(addMovieButton)
+                                    .addComponent(addBookButton)
+                                    .addComponent(addPaintingButton)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(actressField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(actressButton)
+                                    .addComponent(mediaField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(actorButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(actorField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    private String[] actors = new String[20];
+    private int actorCount=0;
+
+    
     private void actorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actorButtonActionPerformed
-        // TODO add your handling code here:
+        
+        System.out.print(actorCount);
+        System.out.print(actorField2.getText());
+        
+        String debugActor = actorField2.getText();
+        
+        
+        System.out.println();
+        
+        actors[actorCount++]=debugActor;
+        System.out.print(actors[actorCount-1]);
     }//GEN-LAST:event_actorButtonActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void titleField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_titleField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_titleField1ActionPerformed
+
+    private void askingPriceField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_askingPriceField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_askingPriceField1ActionPerformed
+
+    private void actorField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actorField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actorField2ActionPerformed
+
+    private void addBookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBookButtonActionPerformed
+        Date date = new Date(Integer.parseInt(dateField11.getText()),Integer.parseInt(dateField12.getText()),Integer.parseInt(dateField13.getText()));
+        
+        Book tempBook = new Book(titleField1.getText(), authorField1.getText(), date, Double.parseDouble(purchasePriceField1.getText()),
+            Double.parseDouble(askingPriceField1.getText()), genreField1.getText());
+        titleField1.getText();
+        
+        System.out.print(tempBook.printableString());
+        
+
+        store.addItem(tempBook);
+    }//GEN-LAST:event_addBookButtonActionPerformed
+
+    private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
+        store.nextItem();
+        outputArea.setText(store.getCurrent().printableString());
+    }//GEN-LAST:event_nextButtonActionPerformed
+
+    private String[] actresses= new String[20];
+    private int actressCount=0;    
+    private void actressButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actressButtonActionPerformed
+        // TODO add your handling code here:
+        actresses[actressCount++]=actressField2.getText();
+    }//GEN-LAST:event_actressButtonActionPerformed
+
+    private void addMovieButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMovieButtonActionPerformed
+        // TODO add your handling code here:
+        //Movie(String title, String author, Date dateAcquired, double purchasePrice,
+        //    double askingPrice, String director, String[]actors, String[]actresses)
+        Date date2 = new Date(Integer.parseInt(dateField21.getText()),Integer.parseInt(dateField22.getText()),Integer.parseInt(dateField23.getText()));
+        
+        Movie tempMovie = new Movie(titleField2.getText(), authorField2.getText(), date2, Double.parseDouble(purchasePriceField2.getText()),
+            Double.parseDouble(askingPriceField2.getText()), directorField2.getText(), actors,actresses);
+        
+        System.out.print(tempMovie.printableString());
+        store.addItem(tempMovie);
+        
+        
+        actors = new String[20];
+        actorCount=0;
+        actresses = new String[20];
+        actressCount=0;
+        
+    }//GEN-LAST:event_addMovieButtonActionPerformed
+
+    private void addPaintingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPaintingButtonActionPerformed
+        Date date3 = new Date(Integer.parseInt(dateField31.getText()),Integer.parseInt(dateField32.getText()),Integer.parseInt(dateField33.getText()));
+        
+        Painting tempPainting = new Painting(titleField3.getText(), authorField3.getText(), date3, Double.parseDouble(purchasePriceField3.getText()),
+            Double.parseDouble(askingPriceField3.getText()),
+                Integer.parseInt(heightField3.getText()),
+                Integer.parseInt(widthField3.getText()),
+                mediaField3.getText());
+        
+//        Painting(String title, String author,  Date dateAcquired, double purchasePrice,
+//            double askingPrice, int height, int width, String media)
+        
+        System.out.print(tempPainting.printableString());
+        store.addItem(tempPainting);
+    }//GEN-LAST:event_addPaintingButtonActionPerformed
+
+    private void previousButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_previousButtonActionPerformed
+        store.previousItem();
+        outputArea.setText(store.getCurrent().printableString());
+    }//GEN-LAST:event_previousButtonActionPerformed
+
+    private void sellButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sellButtonActionPerformed
+        store.sellItem();
+        outputArea.setText(store.getCurrent().printableString());
+    }//GEN-LAST:event_sellButtonActionPerformed
+
+    private void dateField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateField13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dateField13ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TempGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TempGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TempGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TempGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TempGUI().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actorButton;
@@ -473,9 +635,15 @@ public class TempGUI extends javax.swing.JFrame {
     private javax.swing.JTextField authorField1;
     private javax.swing.JTextField authorField2;
     private javax.swing.JTextField authorField3;
-    private javax.swing.JTextField dateField1;
-    private javax.swing.JTextField dateField2;
-    private javax.swing.JTextField dateField3;
+    private javax.swing.JTextField dateField11;
+    private javax.swing.JTextField dateField12;
+    private javax.swing.JTextField dateField13;
+    private javax.swing.JTextField dateField21;
+    private javax.swing.JTextField dateField22;
+    private javax.swing.JTextField dateField23;
+    private javax.swing.JTextField dateField31;
+    private javax.swing.JTextField dateField32;
+    private javax.swing.JTextField dateField33;
     private javax.swing.JTextField directorField2;
     private javax.swing.JTextField genreField1;
     private javax.swing.JTextField heightField3;
@@ -497,6 +665,7 @@ public class TempGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -504,13 +673,18 @@ public class TempGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField mediaField3;
+    private javax.swing.JButton nextButton;
+    private javax.swing.JTextArea outputArea;
+    private javax.swing.JButton previousButton;
     private javax.swing.JTextField purchasePriceField1;
     private javax.swing.JTextField purchasePriceField2;
     private javax.swing.JTextField purchasePriceField3;
+    private javax.swing.JButton sellButton;
+    private javax.swing.JTextField titleField1;
+    private javax.swing.JTextField titleField2;
+    private javax.swing.JTextField titleField3;
     private javax.swing.JTextField widthField3;
     // End of variables declaration//GEN-END:variables
 }

@@ -24,7 +24,7 @@ public class StoreItemNode {
     public StoreItemNode getNext(){
         return nextNode;
     }
-    public void setPrevius(StoreItemNode previous){
+    public void setPrevious(StoreItemNode previous){
         previousNode= previous;
     }
     public StoreItemNode getPrevious(){

@@ -18,6 +18,9 @@ public class Painting extends StoreItem{
     Painting(String title, String author,  Date dateAcquired, double purchasePrice,
             double askingPrice, int height, int width, String media){
         super(title, author, dateAcquired,purchasePrice, askingPrice);
+        setHeight(height);
+        setWidth(width);
+        setMedia(media);
         
         
         paintingCount++;
@@ -43,13 +46,14 @@ public class Painting extends StoreItem{
     }
     
     public void remove(){
-        paintingCount--;        
+        paintingCount--;  
+        itemCount--;
     }
     
     public String printableString(){
         String output = "Title: " + title +"\nAuthor: "+author+"\nMedia: "+media+
-                "\nHeight:"+height+"\nWidth"+width+
-                "\nDate Acquired: " + dateAcquired.printableString() + "\nPurchase Price: " + 
+                "\nHeight: "+height+"\nWidth: "+width+
+                "\nDate Acquired(D/M/Y): " + dateAcquired.printableString() + "\nPurchase Price: " + 
                 purchasePrice + "\nAsking Price: "+askingPrice;
         return output;
     }

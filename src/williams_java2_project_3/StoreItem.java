@@ -10,7 +10,7 @@ package williams_java2_project_3;
  * @author PALEOHAYDUKE
  */
 public class StoreItem {
-    private static int itemCount=0;
+    protected static int itemCount=0;
     protected String title;
     protected String author;
     protected Date dateAcquired;
@@ -60,7 +60,7 @@ public class StoreItem {
         return purchasePrice;
     }
 
-    public void setAskingPrice(double purchasePrice){
+    public void setAskingPrice(double askingPrice){
         this.askingPrice = askingPrice;
     }
     
@@ -75,6 +75,10 @@ public class StoreItem {
     public void remove(){
        itemCount--; 
     }
+    
+    public String printableString(){
+        return "override me";
+    };
     
  //   public double calculateComission(double custOffer){
         
